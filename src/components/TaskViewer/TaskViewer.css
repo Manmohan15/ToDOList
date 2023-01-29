@@ -1,0 +1,57 @@
+.view{
+    width: 54%;
+    height: 100%;
+    background-color: #9a9a99;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    /* grid-template-columns:auto auto 80px 80px;
+    grid-template-rows:auto auto; */
+    font-size:23px;
+    font-family:'Times New Roman', Times, serif;
+}
+.view input{
+    font-size: 25px;
+}
+
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    width:42%;
+    justify-content:space-between;
+}
+/* .title{
+    grid-area:1 / 1 / 1 / 2;
+
+}
+
+.edit{
+    text-align:end;
+    grid-area:2 / 3 / 2 / 3;
+}
+
+.delete{
+    grid-area:2 / 4 / 2 / 4;
+    text-align:end;
+    align-items:center;
+} */
+.delete{
+    display:flex;
+}
+.delete img{
+    height:20px;
+    width:auto;
+}
+
+.edit img{
+    height:20px;
+    width:auto;
+}
+.done img{
+    height:20px;
+    width:auto;
+}

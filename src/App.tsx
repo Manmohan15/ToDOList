@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TaskAdder from './components/TaskAdder/TaskAdder';
+import TaskViewerMapper from './components/TaskViewerMapper/TaskViewerMapper';
 
-function App() {
+export interface Todo{
+  index:number;
+  title:string;
+  Done:Boolean;
+ 
+}
+
+const App:React.FC=()=>{
+  const [todo,setTodo]=useState<string>("");
+  const [todos,setTodos]=useState<Todo[]>([]);
+  const handleAdd=(e: React.FormEvent)=>{
+      e.preventDefault();
+      if(todo!=="")
+      setTodos([...todos,{index:Date.now(),title:todo,Done:false}]);
+      setTodo("");
+
+  }
+  
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="heading">TODO LIST</div>
+      <TaskAdder todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <TaskViewerMapper todos={todos} setTodos={setTodos}></TaskViewerMapper>
     </div>
+
   );
 }
 
